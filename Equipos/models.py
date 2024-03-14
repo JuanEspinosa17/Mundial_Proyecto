@@ -60,8 +60,8 @@ class equipo(models.Model):
 class jugador(models.Model):
     nombre = models.CharField(max_length=20, verbose_name='Nombre')
     apellido = models.CharField(max_length=20, verbose_name='Apellido')
-    fecha_nacimiento = models.DateField(verbose_name='Fecha_Nacimiento')
-    num_camisa = models.IntegerField(verbose_name='Num_Camisa')
+    fecha_nacimiento = models.DateField(verbose_name='Fecha_Nacimiento', null=True, blank=True)
+    num_camisa = models.IntegerField(verbose_name='Num_Camisa', null=True, blank=True)
     idestado = models.ForeignKey(estado, on_delete=models.CASCADE)
     idnacionalidad = models.ForeignKey(nacionalidad, on_delete=models.CASCADE)
     idequipo = models.ForeignKey(equipo, on_delete=models.CASCADE)
@@ -80,7 +80,6 @@ class tecnico(models.Model):
     nombre = models.CharField(max_length=20, verbose_name='Nombre')
     apellido = models.CharField(max_length=20, verbose_name='Apellido')
     fecha_nacimiento = models.DateField(verbose_name='Fecha_Nacimiento')
-    num_camisa = models.IntegerField(verbose_name='Num_Camisa')
     idrol = models.ForeignKey(rol, on_delete=models.CASCADE)
     idnacionalidad = models.ForeignKey(nacionalidad, on_delete=models.CASCADE)
     idequipo = models.ForeignKey(equipo, on_delete=models.CASCADE)
