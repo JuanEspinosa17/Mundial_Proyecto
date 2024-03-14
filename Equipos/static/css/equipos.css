@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;600;800&family=Mulish:wght@200;300;700&display=swap');
+
+
+/* CODIGO NAV*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+a {
+    color: black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+header img {
+    width: 170px;
+}
+
+header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: black;
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+header H2 {
+    color: white;
+    margin-left: 190px;
+}
+
+.menu form {
+    display: flex;
+    align-items: center;
+}
+
+.menu button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 70px;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.menu ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-right: 70px;
+    font-size: 20px;
+    color: white;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+/* CODIGO EQUIPOS*/
+
+.equipos {
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: px;
+}
+
+.equipos h1 {
+    margin-bottom: 50px;
+}
+
+.equipos img {
+    width: 300px;
+    height: 500px;
+}
+
+.cartas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    justify-items: center;
+    margin: 0px 20%;
+}
+
+.carta1{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    width: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.carta1 img{
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+
+.carta1:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px); /* Mueve la carta 5px hacia arriba */
+    transition: 0.3s;
+}
+
+
+
+
+
+
+footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: black;
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+
+.menu_footer ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.menu_footer ul li {
+    margin-right: 70px;
+    font-size: 17px;
+    color: white;
+}
+
+.menu_footer ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+footer img {
+    width: 140px;
+}
+
+footer ul li a {
+    color: white;
+}
+
+@media screen and (max-width: 1200px) {
+    .carta1 {
+        flex: 0 0 calc(33.33% - 20px); /* Cambia el ancho de las tarjetas al 33.33% del contenedor cuando el ancho de la pantalla sea menor a 1200px */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carta1 {
+        flex: 0 0 calc(50% - 20px); /* Cambia el ancho de las tarjetas al 50% del contenedor cuando el ancho de la pantalla sea menor a 768px */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carta1 {
+        flex: 0 0 calc(100% - 20px); /* Cambia el ancho de las tarjetas al 100% del contenedor cuando el ancho de la pantalla sea menor a 576px */
+    }
+}

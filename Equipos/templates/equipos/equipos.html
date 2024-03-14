@@ -1,0 +1,22 @@
+{% extends "layouts/base_paises.html" %} 
+
+{% block content%}
+
+    <div class="equipos">
+        <h1>Conoce los Paises Clasificados</h1>
+        <div class="cartas">
+            {% for equipo in equipos %}
+            <div class="carta1">
+                <a href="{% url 'equipo' equipo.nombre %}">
+                    <img src="{{ equipo.bandera }}" alt="bandera" class="card__img" />
+                </a>
+                <h3 class="card__title">{{ equipo.nombre }}</h3>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
+
+
+

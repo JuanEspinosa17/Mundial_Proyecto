@@ -1,0 +1,36 @@
+{% extends "layouts/base_pais.html" %} 
+
+{% block content %}
+<div class="container">
+    <div class="pais">
+        <h3>{{ equipo.nombre }} Clasificado</h3>
+        <h2>{{ equipo.nombre }} Clasifica al Mundial 2026</h2>
+    </div>
+    <div class="jugadores">
+        <div class="titulares">
+            <h2>Titulares</h2>
+            <ul>
+                {% for c in titulares %}
+                    <li>{{c.nombre}} {{c.apellido}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="suplentes">
+            <h2>Suplentes</h2>
+            <ul>
+                {% for c in suplentes %}
+                    <li>{{c.nombre}} {{c.apellido}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="tecnicos">
+            <h2>Técnicos</h2>
+            <ul>
+                {% for c in tecnicos %}
+                    <li>{{c.nombre}} {{c.apellido}}</li>
+                {% endfor %}
+            </ul> 
+        </div>
+    </div>    
+</div>
+{% endblock %}

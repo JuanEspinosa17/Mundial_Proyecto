@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "css/index.css" %}">
+    <title>MUNDIAL FIFA 2026</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static "/images/logo.jpg" %}" alt="#">
+        </div>
+        <h2>MUNDIAL FIFA 2026</h2>
+        <div class="menu">
+            <ul>
+                <li class="item"><a href="{% url 'index' %}">Inicio</a></li>
+                <li class="item"><a href="{% url 'equipos' %}">Equipos</a></li>
+                {% if request.user.is_authenticated %}
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                {% else %}
+                    <li class="item"><a href="{% url 'login' %}">Login</a></li>
+
+                {% endif %}
+            </ul>
+        </div>
+    </header>
+    
+    <div class="noticias">
+        <h3>Descubre</h3>
+        <h2>Dias habla sobre Portugal, Pep y sus sueños mundialistas</h2>
+        <p>Lea las declaraciones de Rubén Dias a la FIFA sobre Pep Guardiola, Erling Haaland, la selección portuguesa de Roberto Martínez y el atractivo especial de la Copa Mundial de la FIFA.</p>
+    </div>
+
+    <div class="novedades">
+        <h1>Ultimas Novedades</h1>
+        <div class="novedad1">
+            <img src="{% static "images/YouriDjorkaeff.jpg" %}" alt="Youri Djorkaeff">
+            <div class="detalles">
+                <h2>Youri Djorkaeff, sobre el próximo Mundial y su amada Francia</h2>
+                <p>Youri Djorkaeff ha conversado en exclusiva con la FIFA. El campeón mundial en 1998 se refirió sobre todo al próximo Mundial. También habló de su experiencia en Nueva York y de sus recuerdos con la selección francesa.</p>
+            </div>
+        </div>
+
+        <div class="novedad2">
+            <div class="detalles">
+                <h2>Calendario y fixture de la Copa Mundial de la FIFA 26™</h2>
+                <p>Consulte el calendario de partidos del torneo en Canadá, México y EE. UU. con cada uno de los 104 partidos del evento de 48 equipos.</p>
+            </div>
+            <img src="{% static "images/calendario.jpg" %}" alt="Calendario Mundial FIFA 2026">
+        </div>
+    </div>
+
+    <footer>
+        <img src="{% static "/images/logo.jpg" %}" alt="#">
+        <div class="menu_footer">
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">X</a></li>
+                <li class="item"><a href="{% url 'login_administrador' %}">Administrador</a></li>
+            </ul>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>
